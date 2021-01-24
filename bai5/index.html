@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div class="app">
+        <div id="example">
+            <p>Computed</p>
+            <p>Text: "{{ message }}"</p>
+            <p>Computed: "{{ reversedMessage }}"</p>
+        </div>
+    </div>
+    <hr>
+
+    <div class="app2">
+        <p>Watch</p>
+        <div id="watch-example">
+            <p>
+                Hãy hỏi một câu hỏi yes/no:
+                <input v-model="question">
+            </p>
+            <p>{{ answer }}</p>
+        </div>
+    </div>
+    <hr>
+
+</body>
+
+<script src="vue.js"></script>
+
+</html>
