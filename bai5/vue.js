@@ -10,36 +10,15 @@ var vm = new Vue({
     }
 })
 
-var watchExampleVM = new Vue({
+var watch = new Vue({
     el: '#watch-example',
     data: {
-        question: '',
-        answer: 'Không thể trả lời nếu bạn chưa đặt câu hỏi!'
+        example: 'lorem ipsum'
     },
     watch: {
-        question: function(newQuestion, oldQuestion) {
-            this.answer = 'Đang chờ bạn đặt xong câu hỏi...'
-            this.getAnswer()
+        data: function() {
+            alert(this.example);
         }
-    },
-    methods: {
-        getAnswer: _.debounce(
-            function() {
-                if (this.question.indexOf('?') === -1) {
-                    this.answer = 'Câu hỏi thì thường chứa một dấu "?" ;-)'
-                    return
-                }
-                this.answer = 'Đang suy nghĩ...'
-                var vm = this
-                axios.get('https://yesno.wtf/api')
-                    .then(function(response) {
-                        vm.answer = _.capitalize(response.data.answer)
-                    })
-                    .catch(function(error) {
-                        vm.answer = 'Lỗi! Không thể truy cập API. ' + error
-                    })
-            },
-            500
-        )
     }
 })
+watch.example = "Hello word";

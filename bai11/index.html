@@ -9,23 +9,15 @@
 </head>
 
 <body>
-    <div class="app">
-        <div id="example">
-            <p>Computed</p>
-            <p>Text: "{{ message }}"</p>
-            <p>Computed: "{{ reversedMessage }}"</p>
-        </div>
+    <div id="compoment">
+        <button-counter></button-counter>
+        <button-counter></button-counter>
+        <button-counter></button-counter>
     </div>
-    <hr>
 
-    <div class="app2">
-        <p>Watch</p>
-        <div id="watch-example">
-            {{example}}
-        </div>
+    <div id="prop">
+        <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:title="post.title"></blog-post>
     </div>
-    <hr>
-
 </body>
 
 <script src="vue.js"></script>
